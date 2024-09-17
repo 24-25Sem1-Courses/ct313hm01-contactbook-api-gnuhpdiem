@@ -1,5 +1,7 @@
+const jsend = require('../jsend')
+
 function createContact(req, res) {
-    return res.status(201).json({contact: {}})
+    return res.status(201).json(jsend.success({contact: {}}))
 }
 
 function getContactsByFilter(req, res) {
@@ -18,24 +20,24 @@ function getContactsByFilter(req, res) {
 
     console.log(filters.join('&'))
 
-    return res.json({contacts: []})
+    return res.json(jsend.success({contacts: []}))
 
 }
 
 function getContact(req, res) {
-    return res.json({contact: {}})
+    return res.json(jsend.success({contact: {}}))
 }
 
 function updateContact(req, res) {
-    return res.json({contact: {}})
+    return res.json(jsend.success({contact: {}}))
 }
 
 function deleteContact(req, res) {
-    return res.json({message: "Contact deleted"})
+    return res.json(jsend.success())
 }
 
 function deleteAllContacts(req, res) {
-    return res.json({message: "All contacts deleted"})
+    return res.json(jsend.success())
 }
 
 module.exports = {getContact, deleteContact, updateContact, getContactsByFilter, deleteAllContacts, createContact}
