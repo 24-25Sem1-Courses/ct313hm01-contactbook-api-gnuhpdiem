@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
     return res.json(jsend.success())
 })
 
+app.use('/public', express.static('public'))
+
 contactsRouter.setup(app)
 
 // handle 404 error
