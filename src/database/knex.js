@@ -1,11 +1,7 @@
-// Update config settings
-require('dotenv').config()
-
+// create a knex object to connect to database
 const {DB_HOST, DB_PORT, DB_PASS, DB_USER, DB_NAME} = process.env
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
-module.exports = {
+
+module.exports = require('knex') ({
 
   client: 'mysql',
   connection: {
@@ -19,8 +15,5 @@ module.exports = {
     min: 0,
     max:10
   },
-  seeds: {
-    directory: './seeds',
-  },
-
-};
+  
+})
